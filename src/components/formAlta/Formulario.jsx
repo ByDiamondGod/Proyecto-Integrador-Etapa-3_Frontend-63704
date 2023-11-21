@@ -134,7 +134,7 @@ const Formulario = ({ productoAEditar, setProductoAEditar }) => {
             onBlur={handleBlur}
             autoFocus
             required
-            maxLength="15"
+            maxLength="20"
             autoComplete="off"
           />
         </div>
@@ -183,7 +183,7 @@ const Formulario = ({ productoAEditar, setProductoAEditar }) => {
             onFocus={() => handleFocus('marca')}
             onBlur={handleBlur}
             required
-            maxLength="15"
+            maxLength="30"
             value = {form.marca}
             onChange={handleChange}
             autoComplete='off'
@@ -201,7 +201,7 @@ const Formulario = ({ productoAEditar, setProductoAEditar }) => {
             onFocus={() => handleFocus('categoria')}
             onBlur={handleBlur}
             required
-            maxLength="15"
+            maxLength="30"
             value = {form.categoria}
             onChange={handleChange}
             autoComplete='off'
@@ -219,7 +219,7 @@ const Formulario = ({ productoAEditar, setProductoAEditar }) => {
             onFocus={() => handleFocus('detalles')}
             onBlur={handleBlur}
             required
-            maxLength="200"
+            maxLength="300"
             value = {form.detalles}
             onChange={handleChange}
             autoComplete='off'
