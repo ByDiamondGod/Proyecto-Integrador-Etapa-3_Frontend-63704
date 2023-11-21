@@ -1,0 +1,13 @@
+//? Abstracts
+@import "sass/variables";
+@import "sass/mixins";
+
+//? Base
+@import "sass/reset";
+@import "sass/typography";
+@import "sass/effects";
+
+//? Using mixins
+
+@include headings;
+@import '@sweetalert2/theme-dark/dark.scss';

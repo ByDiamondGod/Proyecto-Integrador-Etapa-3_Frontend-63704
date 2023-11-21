@@ -1,0 +1,44 @@
+@import "../../sass/variables.scss";
+
+.drop-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: clamp(200px, 90%, 250px);
+    height: 200px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background-color: rgba(255, 255, 255, 0);
+    margin-top: 4px;
+
+
+    & p {
+        text-align: center;
+        color: #777;
+        user-select: none;
+    }
+
+    &-button {
+        font-size: 14px;
+        display: inline-block;
+        padding: 14px;
+        background: #1c1c1c2d;
+        border: 1px solid #555;
+        border-radius: 20px;
+        color: #bbb;
+        cursor: pointer;
+        border-radius: 5px;
+        border-radius: 1px solid #ccc;
+
+    }
+
+    & #lbl-foto {
+        display: none;
+    }
+
+    &-image img {
+        height: 30px;
+        vertical-align: middle;
+        margin: 12px;
+    }
+}

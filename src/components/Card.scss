@@ -1,0 +1,123 @@
+@import '../sass/variables.scss';
+
+
+.card {
+  width: clamp(310px, 50%, 360px);
+  max-width: 400px;
+  outline: none;
+  height: 450px;
+  overflow: hidden;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: #0f2027; /* fallback for old browsers */
+  // background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  // background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(to right, #0a0a0a, #1b1b1b, #302e2e52);
+  background: -webkit-linear-gradient(to right, #0a0a0a, #1b1b1b, #302e2e52);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 0 3px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.03) skew(0);
+    transform-origin: bottom;
+    box-shadow: 0 7px 8px rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.01);
+  }
+
+  &__image-container {
+    height: 200px;
+    width: clamp(310px, 100%, 360px);
+    background-image: url("/img/galaxy-card.webp");
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 200px, 0 190px); /* init */
+  }
+
+  &__image-container img[src="img/rocket.webp"] {
+    width: 135px;
+  }
+
+  &:hover &__image-container,
+  &:focus &__image-container {
+    clip-path: polygon(0 0, 100% 0, 100% 190px, 0 200px); /*  end */
+  }
+
+  &__image {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-top: 20px;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &:hover &__image,
+  &:focus &__image {
+    transform: scale(1.2) rotate(10deg);
+    transform-origin: center;
+  }
+
+  &__content {
+    padding: 0.5em;
+  }
+
+  &__heading {
+    font-size: 24px;
+    font-weight: 700;
+    background: $h2-color;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  &__description {
+    margin: 0 auto;
+    height: 100px;
+    width: clamp( 280px, 100%, 330px);
+
+    p {
+      font-size: 14px;
+      color: #ccc;
+      text-align: center;
+      text-wrap: wrap;
+      max-inline-size: 50ch;
+      text-wrap: balance
+    }
+  }
+
+  .card__div-button {
+    display: block;
+    width: 200px;
+    height: 90px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__button {
+    margin-top: 30px;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #151819, #000001eb, #0d1214);
+    color: #ddd;
+    font-size: 14px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    border: 1px solid #ddd;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.03) skew(0);
+      transform-origin: bottom;
+      box-shadow: 0 7px 8px rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.01);
+      border: 1px solid $tertiary-color;
+      color: $tertiary-color;
+    }
+  }
+}
+

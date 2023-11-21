@@ -1,0 +1,45 @@
+@use "variables" as var;
+
+// alternative
+
+@mixin heading {
+  font-size: var.$font-size-title;
+  background: var.$h1-color;
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+@mixin paragraph {
+  font-size: var.$font-size-title-p;
+  font-weight: 400;
+  background: var.$p-color;
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+// complete
+
+@mixin headings {
+  .heading {
+    padding: 2em;
+    margin: 0 auto;
+    max-width: 1300px;
+    &__header {
+      text-align: center;
+      margin-bottom: 5px;
+
+      h1 {
+        @include heading;
+      }
+
+      span {
+        @include paragraph;
+      }
+
+      span.Typewriter__cursor {
+        color: #0c0c17;
+        // color: #bccada;
+      }
+    }
+  }
+}
