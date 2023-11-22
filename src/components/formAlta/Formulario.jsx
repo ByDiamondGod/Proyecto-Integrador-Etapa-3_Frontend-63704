@@ -39,7 +39,8 @@ const Formulario = ({ productoAEditar, setProductoAEditar }) => {
       setForm(formInicial)
       setIsEditing(false);
     }
-    // productoAEditar ? setForm(productoAEditar) : setForm(formInicial)
+
+     setShowAviso(false);
   }, [productoAEditar, setForm, setProductoAEditar])
 
       // Función para mostrar notificación de envío exitoso
@@ -68,9 +69,10 @@ const Formulario = ({ productoAEditar, setProductoAEditar }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.warn('Debes completar todo el formulario')
 
-    if (!foto) {
+    // Sacando validación de foto al editar un producto
+    // No valida la foto evitando cansar al usuario, agregando la imagen a cada rato si se edita un producto
+    if (!foto && !isEditing) {
       setShowAviso(true);
       return;
     }
