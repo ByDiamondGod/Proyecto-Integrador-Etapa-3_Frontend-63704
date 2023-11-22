@@ -35,12 +35,12 @@ const Formulario = ({ productoAEditar, setProductoAEditar, formSwipe }) => {
       setForm(productoAEditar)
       setSrcImagen(productoAEditar.foto)
       setIsEditing(true)
+      setShowAviso(false);
     } else {
       setForm(formInicial)
       setIsEditing(false);
     }
 
-     setShowAviso(false);
   }, [productoAEditar, setForm, setProductoAEditar])
 
       // Función para mostrar notificación de envío exitoso
@@ -90,7 +90,7 @@ const Formulario = ({ productoAEditar, setProductoAEditar, formSwipe }) => {
       }
 
       handleReset()
-
+      setIsEditing(false);
     } catch (error) {
       console.error('Algo ocurrió en el handleSubmit', error)
     }
@@ -102,6 +102,7 @@ const Formulario = ({ productoAEditar, setProductoAEditar, formSwipe }) => {
     setFoto('')
     setSrcImagen('')
     setShowAviso(false);
+    setIsEditing(false);
   }
 
     // Blur y Focus
