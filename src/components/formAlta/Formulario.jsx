@@ -18,7 +18,7 @@ const formInicial = {
     envio: false,
 }
 
-const Formulario = ({ productoAEditar, setProductoAEditar }) => {
+const Formulario = ({ productoAEditar, setProductoAEditar, formSwipe }) => {
 
   /* Creamos 2 estados para gestionar el drag and drop */
   const [foto, setFoto] = useState('')
@@ -116,7 +116,7 @@ const Formulario = ({ productoAEditar, setProductoAEditar }) => {
     }
 
   return (
-    <div className='alta-form'>
+    <div className='alta-form' ref={formSwipe} id='id-del-formulario'>
 
       <h2 className='alta-form__title'>{isEditing ? 'Editar producto' : 'Agregar producto'}</h2>
 

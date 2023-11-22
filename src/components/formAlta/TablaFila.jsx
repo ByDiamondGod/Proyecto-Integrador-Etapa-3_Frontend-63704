@@ -3,11 +3,9 @@ import { useContext } from 'react'
 import ProductoContext from '../../contexts/ProductoContext';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import PropTypes from 'prop-types';
-
-
 import './TablaFila.scss'
 
-const TablaFila = ({ producto, setProductoAEditar }) => {
+const TablaFila = ({ producto, setProductoAEditar, formSwipe }) => {
 
   const { eliminarProductoContext } = useContext(ProductoContext)
 
@@ -26,7 +24,6 @@ const TablaFila = ({ producto, setProductoAEditar }) => {
       cancelButtonText: 'Cancelar',
     }).then((result) => {
       if (result.isConfirmed) {
-        // El usuario ha confirmado la eliminación
         eliminarProductoContext(id);
         Swal.fire(
           '¡Listo!',
@@ -44,24 +41,31 @@ const TablaFila = ({ producto, setProductoAEditar }) => {
     });
   }
 
+  // Forma 1 | sin props (formScrollUp)
+  // (Mejor solucion para el desplazamiento vertical hacia el formulario[es mas especifico])
   const handleUpdate = (item) => {
-    Swal.fire({
-        title: '¿Deseas editar?',
-        text: `${item.nombre}`,
-        icon: 'info',
-        showCancelButton: true,
-        confirmButtonText: 'Editar',
-        cancelButtonText: 'Cancelar',
-    }).then((result) => {
-        if (result.isConfirmed) {
-            // El usuario ha confirmado la edición
-            setProductoAEditar(item);
-
-        } else if (result.dismiss === Swal.DismissReason.cancel) {
-            // El usuario ha cancelado la edición
+    setProductoAEditar(item);
+    const formScrollUp = document.getElementById('id-del-formulario');
+        if (formScrollUp) {
+          formScrollUp.scrollIntoView({ behavior: 'smooth' });
         }
-    });
-}
+};
+
+  // Forma 2 | con props desde Alta (formSwipe)
+
+  //   const handleUpdate = (item) => {
+  //     setProductoAEditar(item);
+  //     handleScrollToFormulario();
+  // };
+
+  // const handleScrollToFormulario = () => {
+  //   if (formSwipe && formSwipe.current) {
+  //     formSwipe.current.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+
+  //     Desplazar la página hacia arriba
+  //     window.scrollBy(0, -2000);
+  //   }
+  //   };
 
   return (
     <tr className='alta-table__row'>

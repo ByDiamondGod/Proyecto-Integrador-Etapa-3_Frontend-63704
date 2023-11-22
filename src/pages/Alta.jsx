@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Formulario from '../components/formAlta/Formulario'
 import Tabla from '../components/formAlta/Tabla'
 import TypeAlta from '../components/typewritters/TypeAlta';
@@ -7,7 +7,8 @@ import './Alta.scss';
 
 const Alta = () => {
 
-  const [productoAEditar, setProductoAEditar] = useState(null)
+    const [productoAEditar, setProductoAEditar] = useState(null)
+    const formSwipe = useRef(null);
 
   return (
       <main>
@@ -18,8 +19,8 @@ const Alta = () => {
               </header>
           </div>
           <div>
-              <Formulario productoAEditar={productoAEditar} setproductoAEditar={setProductoAEditar} />
-              <Tabla setProductoAEditar={setProductoAEditar} />
+              <Formulario productoAEditar={productoAEditar} setproductoAEditar={setProductoAEditar} formSwipe={formSwipe} />
+              <Tabla setProductoAEditar={setProductoAEditar} formSwipe={formSwipe} />
           </div>
       </main>
   );
