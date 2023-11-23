@@ -32,7 +32,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                         {/* Componente si hay un error se usa el, estaria bueno que diga 404 not found * */}
                     </Routes>
 
-                    <Footer />
+                    {location.pathname !== '/carrito' ? <Footer /> : null}  {/* callToAction: Evita salirse, sacando el footer */}
                 </BrowserRouter>
             </ProductoProvider>
         </CarritoProvider>

@@ -70,7 +70,7 @@ const Carrito = () => {
       </div>
 
       <div className='carrito-container'>
-      <table className='alta-table'>
+      <table className='alta-table carrito-table'>
         <thead className='alta-table__header'>
           <tr>
             <th></th>
