@@ -41,9 +41,12 @@
   -moz-border-radius: 0px 0px 10px 10px;
   -webkit-border-radius: 0px 0px 10px 10px;
 
-  &__logo-container,
-  &__form-container {
+  &__logo-container {
     padding: 1em;
+  }
+
+  &__form-container {
+    padding: 1em 0;
   }
 
   &__logo-container {
@@ -132,7 +135,7 @@
     cursor: pointer;
     margin: auto 0;
     height: 30px;
-    margin-right: 15px;
+    margin-right: 20px;
   }
 
   &__carrito-color {
