@@ -8,6 +8,14 @@ import { faShoppingCart, faSearch} from '@fortawesome/free-solid-svg-icons';
 
 
 const Header = () => {
+
+  const handleClick = () => {
+    // Verificar si estamos en un dispositivo móvil
+    if (window.innerWidth <= 768) {
+      // Si estamos en un dispositivo móvil, redirigir al principio de la página
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
   return (
     <>
       <header className="main-header">
@@ -17,7 +25,7 @@ const Header = () => {
 
         <div className="search-bar">
 
-          <Link to="/inicio" className="search-bar__logo-container" aria-label="Logo Galaxy Shop"> </Link>
+          <Link to="/inicio" className="search-bar__logo-container" aria-label="Logo Galaxy Shop"  onClick={handleClick}> </Link>
 
           <form action="#" className="search-bar__form-container">
             {/* <label htmlFor="busqueda" className="search-bar__form-label">Buscar:</label> */}
