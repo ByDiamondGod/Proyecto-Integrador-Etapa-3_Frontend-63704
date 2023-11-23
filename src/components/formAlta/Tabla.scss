@@ -2,6 +2,11 @@
 
 thead {
     border: 1px solid rgba(255, 255, 255, 0.22);
+    font-size: clamp(14px, 1vw, 18px);
+}
+
+.table-container {
+    margin: 4rem auto 12rem; 
 }
 
 .alta-table {
@@ -9,6 +14,7 @@ thead {
     margin: 2rem auto;
     background-color: #000;
     border-collapse: collapse;
+    text-wrap: pretty;
 }
 
 .alta-table th,
@@ -17,6 +23,7 @@ thead {
     text-align: center;
     color: #ddd;
     border: none;
+    font-size: clamp(13px, 1vw, 14px);
 }
 
 
@@ -49,9 +56,76 @@ thead {
         display: block;
     }
 
-    .alta-table td::before {
+  /*   .alta-table td::before {
         content: attr(data-label);
         display: inline-block;
+    } */
+
+    th {
+        display: none;
     }
+
+    td {
+        display: block;
+        padding: 0.75rem 1rem;
+    }
+
+    td:first-child {
+        padding-top: 3rem;
+    }
+
+    td:last-child {
+        padding-bottom: 3rem;
+    }
+
+    td::before {
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+
+      // mixin para evitar repetición de código
+    @mixin cellContent($index, $content) {
+        td:nth-of-type(#{$index})::before {
+            content: "#{$content}";
+        }
+    }
+
+    // Definir contenido para cada celda
+    @include cellContent(1, "nombre: ‎ ");
+    @include cellContent(2, "precio: ‎");
+    @include cellContent(3, "Stock: ‎");
+    @include cellContent(4, "marca: ‎");
+    @include cellContent(5, "categoria: ‎");
+    @include cellContent(6, "detalles: ‎");
+    @include cellContent(8, "Envio: ‎");
+
+   /*  td:nth-of-type(1)::before {
+        content: "nombre: ‎ ";
+    }
+
+    td:nth-of-type(2)::before {
+        content: "precio: ‎";
+    }
+
+    td:nth-of-type(3)::before {
+        content: "Stock: ‎";
+    }
+
+    td:nth-of-type(4)::before {
+        content: "marca: ‎";
+    }
+
+    td:nth-of-type(5)::before {
+        content: "categoria: ‎";
+    }
+
+    td:nth-of-type(6)::before {
+        content: "detalles: ‎";
+    }
+
+    td:nth-of-type(8)::before {
+        content: "Envio: ‎";
+    } */
+
 }
 

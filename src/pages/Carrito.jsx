@@ -69,34 +69,34 @@ const Carrito = () => {
         </header>
       </div>
 
-
-      <table className='alta-table table-cart'>
+      <div className='table-container'>
+      <table className='alta-table'>
         <thead className='alta-table__header'>
           <tr>
-            <th>Foto</th>
-            <th>Nombre</th>
+            <th></th>
+            <th>Producto</th>
             <th>Cantidad</th>
             <th>Precio</th>
-            <th>Subtotal</th>
-            <th>Acciones</th>
+            <th>Final</th>
+            <th> </th>
           </tr>
         </thead>
         <tbody className='alta-table__body'>
           {carrito.length <= 0 ? (
             <tr className='alta-table__row'>
-              <td colSpan={6}><strong>No hay productos</strong></td>
+              <td className='carrito__tittle' colSpan={6}><strong>No hay productos</strong></td>
             </tr>
           ) : (
             carrito.map((producto, idx) => (
               <tr className='alta-table__row' key={idx}>
-                <td>
+                <td className='carrito__row'>
                   <img src={producto.foto} alt={producto.nombre} className='alta-table__img' />
                 </td>
-                <td>{producto.nombre}</td>
-                <td>{producto.cantidad}</td>
-                <td>{producto.precio}</td>
-                <td>{producto.cantidad * producto.precio}</td>
-                <td>
+                <td className='carrito__row'>{producto.nombre}</td>
+                <td className='carrito__row'>{producto.cantidad}</td>
+                <td className='carrito__row'>{producto.precio}</td>
+                <td className='carrito__row'>{producto.cantidad * producto.precio}</td>
+                <td className='carrito__row'>
                   <button className='alta-table__button-row alta-table__button-row--delete' onClick={() => handleEliminar(producto.id)}>Eliminar</button>
                 </td>
               </tr>
@@ -104,9 +104,9 @@ const Carrito = () => {
           )}
           {!carrito.length <= 0 && (
             <tr className='alta-table__row'>
-              <td className='' colSpan={4}><strong>Total</strong></td>
-              <td><strong>{parseFloat(calcularTotal()).toFixed(2)}</strong></td>
-              <td>
+              <td className='carrito__row2' colSpan={4}><strong>Total</strong></td>
+              <td className='carrito__row2'><strong>{parseFloat(calcularTotal()).toFixed(2)}</strong></td>
+              <td className='carrito__row2'>
                 {!carrito.length <= 0 && (
                   <button
                     className='alta-table__button-row alta-table__button-row--send'
@@ -119,7 +119,8 @@ const Carrito = () => {
             </tr>
           )}
         </tbody>
-      </table>
+        </table>
+      </div>
     </>
   )
 }

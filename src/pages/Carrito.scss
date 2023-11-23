@@ -1,7 +1,3 @@
-.table-cart {
-    margin-top: 0;
-}
-
 .alta-table {
   &__button-row {
 
@@ -13,3 +9,98 @@
       }
   }
 }
+
+.carrito{
+    &__tittle:nth-of-type(1)::before {
+        content: "";
+    }
+}
+
+@media (max-width: 1000px) {
+
+    // mixin para evitar repetición de código
+    @mixin rowContent($index, $content) {
+        .carrito__row:nth-of-type(#{$index})::before {
+            content: "#{$content}";
+        }
+
+        .carrito__row2:nth-of-type(#{$index})::before {
+            content: "#{$content}";
+        }
+    }
+
+    @mixin rowContent2($index, $content) {
+
+        .carrito__row2:nth-of-type(#{$index})::before {
+            content: "#{$content}";
+        }
+    }
+
+    // Define el contenido para cada fila
+    //              index, content
+    @include rowContent(1, " ");
+    @include rowContent(2, "Producto: ‎"); // ‎ = espacio en blanco
+    @include rowContent(3, "Cantidad: ‎");
+    @include rowContent(4, "Precio: ‎");
+    @include rowContent(5, "Final: ‎");
+    @include rowContent(6, " ");
+    @include rowContent(7, " ");
+    @include rowContent(8, " ");
+
+    // 2
+    @include rowContent2(1, " ");
+    @include rowContent2(2, " ");
+    @include rowContent2(3, " ");
+}
+
+/* Forma mas larga */
+/* 
+
+@media (max-width: 1000px) {
+
+    .carrito__row:nth-of-type(1)::before {
+        content: "";
+    }
+
+    .carrito__row:nth-of-type(2)::before {
+        content: "nombre: ‎";
+    }
+
+    .carrito__row:nth-of-type(3)::before {
+        content: "Cantidad: ‎";
+    }
+
+    .carrito__row:nth-of-type(4)::before {
+        content: "Valor : ‎";
+    }
+
+    .carrito__row:nth-of-type(5)::before {
+        content: "Total: ‎";
+    }
+
+    .carrito__row:nth-of-type(6)::before {
+        content: "";
+    }
+
+    .carrito__row:nth-of-type(7)::before {
+        content: "";
+    }
+
+    .carrito__row:nth-of-type(8)::before {
+        content: "";
+    }
+
+    // 2
+    .carrito__row2:nth-of-type(1)::before {
+        content: "";
+    }
+
+    .carrito__row2:nth-of-type(2)::before {
+        content: "";
+    }
+
+    .carrito__row2:nth-of-type(3)::before {
+        content: "";
+    }
+
+} */

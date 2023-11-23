@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useContext } from 'react'
 import ProductoContext from '../../contexts/ProductoContext';
@@ -74,23 +75,24 @@ const TablaFila = ({ producto, setProductoAEditar, formSwipe }) => {
           <td>{producto.stock}</td>
           <td>{producto.marca}</td>
           <td>{producto.categoria}</td>
-      <td className='alta-table__description' >{producto.detalles}</td>
-      <td>
+          <td className='alta-table__description' >{producto.detalles}</td>
+          <td>
             <img className='alta-table__img' src={producto.foto} alt={producto.nombre} />
           </td>
           <td>{producto.envio ? 'Si' : 'No'}</td>
-      <td>
-        <div className='alta-table__buttons-row'>
-          <button className='alta-table__button-row alta-table__button-row--edit'
-            onClick={() => handleUpdate(producto)}>
-            Editar
-          </button>
 
-          <button className='alta-table__button-row alta-table__button-row--delete'
-            onClick={() => handleDelete(producto.id, producto.nombre)}>
-            Eliminar
-          </button>
-        </div>
+          <td>
+            <div className='alta-table__buttons-row'>
+              <button className='alta-table__button-row alta-table__button-row--edit'
+                onClick={() => handleUpdate(producto)}>
+                Editar
+              </button>
+
+            <button className='alta-table__button-row alta-table__button-row--delete'
+              onClick={() => handleDelete(producto.id, producto.nombre)}>
+              Eliminar
+            </button>
+            </div>
           </td>
     </tr>
   )
