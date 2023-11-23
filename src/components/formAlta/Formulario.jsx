@@ -135,7 +135,6 @@ const Formulario = ({ productoAEditar, setProductoAEditar, formSwipe }) => {
             onChange={handleChange}
             onFocus={() => handleFocus('nombre')}
             onBlur={handleBlur}
-            autoFocus
             required
             maxLength="20"
             autoComplete="off"

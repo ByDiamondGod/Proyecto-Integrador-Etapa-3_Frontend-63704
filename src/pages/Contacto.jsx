@@ -29,7 +29,7 @@ const Contacto = () => {
 
             <form action='https://formspree.io/f/mwkdlaoz' method='POST' className='form-container'>
                 <div className='form-container__entry-area'>
-                    <input type='text' id='nombre' name='nombre' required autoFocus maxLength='30' autoComplete='off'/>
+                    <input type='text' id='nombre' name='nombre' required maxLength='30' autoComplete='off'/>
                     <label className='form-container__labels' htmlFor='nombre'>Nombre</label>
                 </div>
 
@@ -87,7 +87,7 @@ const Contacto = () => {
             <div className='ovni-container__ovni'>
                 <div className='ovni-container__capsule'> <FontAwesomeIcon icon={fasMapMarkerAlt} className='ovni-container__icon' /> </div>
                 <div className='ovni-container__dish'>
-                    <p className='ovni-container__dish-text'>Texas, EE. UU.</p>
+                    <p className='ovni-container__dish-text'>Florida, EE. UU.</p>
                 </div>
             </div>
         </div>
