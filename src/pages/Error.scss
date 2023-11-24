@@ -1,0 +1,54 @@
+@import '../sass/variables.scss';
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  margin-top: 3rem;
+
+  h1 {
+    font-size: clamp(12px, 2vw, 23px);
+    color: #eee;
+    text-align: center;
+    max-inline-size: 50ch;
+    text-wrap: balance;
+  }
+
+  p {
+    font-size: clamp(12px, 2vw, 23px);
+    color: #ddd;
+    text-align: center;
+    max-inline-size: 50ch;
+    text-wrap: balance;
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 15rem;
+    margin: 1rem auto 1rem;
+  }
+
+  &__button {
+    margin: 1.4rem auto 3rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-image: linear-gradient(to right, #151819, #000001eb, #0d1214);
+    color: #ddd;
+    font-size: 14px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    border: 1px solid #ddd;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.03) skew(0);
+      transform-origin: bottom;
+      box-shadow: 0 7px 8px rgba(0, 0, 0, 0.05), 0 3px 3px rgba(0, 0, 0, 0.01);
+      border: 1px solid $tertiary-color;
+      color: $tertiary-color;
+    }
+  }
+}

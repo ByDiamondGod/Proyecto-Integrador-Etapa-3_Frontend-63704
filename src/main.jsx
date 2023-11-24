@@ -9,9 +9,10 @@ import Nosotros from './pages/Nosotros';
 import Alta from './pages/Alta';
 import Contacto from './pages/Contacto';
 import Carrito from './pages/Carrito';
-
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Error from './pages/Error';
+
 import { ProductoProvider } from './contexts/ProductoContext';
 import { CarritoProvider } from './contexts/CarritoContext';
 
@@ -23,13 +24,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     <Header />
 
                     <Routes>
-                        <Route path='/' element={<Inicio />} />
+                        <Route path='/inicio' element={<Inicio />} />
                         <Route path='/alta' element={<Alta />} />
                         <Route path='/contacto' element={<Contacto />} />
                         <Route path='/nosotros' element={<Nosotros />} />
                         <Route path='/carrito' element={<Carrito />} />
-                        <Route path='*' element={<Inicio />} />{' '}
-                        {/* Componente si hay un error se usa el, estaria bueno que diga 404 not found * */}
+                        <Route path='*' element={<Error />} />
                     </Routes>
 
                     <Footer />
