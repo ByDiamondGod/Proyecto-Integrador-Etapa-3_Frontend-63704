@@ -212,6 +212,7 @@
     border-bottom: none; 
   }
 
+
   &__icon {
     display: block;
     width: 40px;
@@ -219,6 +220,10 @@
     color: white;
     font-size: 16px;
     margin: 18px auto 0 auto;
+  }
+
+  &__icon:hover {
+    color: rgb(0, 233, 250);
   }
 
   &__dish {

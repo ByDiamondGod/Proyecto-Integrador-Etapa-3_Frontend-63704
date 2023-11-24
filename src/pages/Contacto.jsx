@@ -73,19 +73,31 @@ const Contacto = () => {
           
         <div className='main-form ovni-container' data-aos='zoom-in-up' data-aos-duration='1000'>
             <div className='ovni-container__ovni'>
-                <div className='ovni-container__capsule'> <FontAwesomeIcon icon={farEnvelope} className='ovni-container__icon' /> </div>
+                  <div className='ovni-container__capsule'>
+                      <a href="mailto:eddev.jobs@gmail.com">
+                        <FontAwesomeIcon icon={farEnvelope} className='ovni-container__icon' />
+                      </a>
+                  </div>
                 <div className='ovni-container__dish'>
                     <p className='ovni-container__dish-text'>eddev.jobs@gmail.com</p>
                 </div>
             </div>
             <div className='ovni-container__ovni'>
-                <div className='ovni-container__capsule'> <FontAwesomeIcon icon={fasPhone} className='ovni-container__icon' /> </div>
+                  <div className='ovni-container__capsule'>
+                      <a href="https://web.whatsapp.com/send?phone=541125473411" target='_blank' rel='noreferrer' className='ovni-container__link'>
+                      <FontAwesomeIcon icon={fasPhone} className='ovni-container__icon' />
+                    </a>
+                  </div>
                 <div className='ovni-container__dish'>
-                    <p className='ovni-container__dish-text'>(00) 1234-5678 </p>
+                    <p className='ovni-container__dish-text'>(54) 11 2547-3411</p>
                 </div>
             </div>
             <div className='ovni-container__ovni'>
-                <div className='ovni-container__capsule'> <FontAwesomeIcon icon={fasMapMarkerAlt} className='ovni-container__icon' /> </div>
+                  <div className='ovni-container__capsule'>
+                      <a href="https://maps.app.goo.gl/5ndKtoxvZyYpvykPA" target='_blank' rel='noreferrer'>
+                        <FontAwesomeIcon icon={fasMapMarkerAlt} className='ovni-container__icon' />
+                      </a>
+                  </div>
                 <div className='ovni-container__dish'>
                     <p className='ovni-container__dish-text'>Florida, EE. UU.</p>
                 </div>
