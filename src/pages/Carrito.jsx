@@ -6,7 +6,7 @@ import './Carrito.scss'
 
 const Carrito = () => {
   const { carrito, eliminarCarritoContext, guardarCarritoContext } = useContext(CarritoContext)
-  console.log(carrito)
+  // console.log(carrito)
 
   const handleEliminar = (id) => {
     //console.log(id)
@@ -56,7 +56,7 @@ const Carrito = () => {
     let sumaTotal = carrito.reduce((total, prod) => {
       return total + (prod.precio * prod.cantidad)
     }, 0)
-    console.log(sumaTotal)
+    // console.log(sumaTotal)
     return sumaTotal
   }
 

@@ -25,7 +25,7 @@ export const post = async (url, dato) => {
 
     try {
         /* Controlo si es un obj FormData o un obj de js */
-        console.log(dato instanceof FormData)
+        // console.log(dato instanceof FormData)
         if ( dato instanceof FormData ) { // true o false
             config = {
                 method: 'POST',
@@ -45,7 +45,7 @@ export const post = async (url, dato) => {
             body: dato instanceof FormData ? dato : JSON.stringify(dato)
         } */
 
-        console.log(config)
+        // console.log(config)
         const respuesta = await fetch(url, config)
         if ( !respuesta.ok ) {
             throw new Error(`Ocurrió un problema ${respuesta.status} ${respuesta.statusText}`)
@@ -87,7 +87,7 @@ export const del = async (url, id) => {
             method: 'DELETE'
         }
         const urlFull = url + id
-        console.log(urlFull)
+        // console.log(urlFull)
         const respuesta = await fetch(urlFull, config)
         if ( !respuesta.ok ) {
             throw new Error(`Ocurrió un problema ${respuesta.status} ${respuesta.statusText}`)

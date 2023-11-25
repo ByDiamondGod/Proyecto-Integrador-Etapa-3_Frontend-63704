@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import { useState, createContext, useEffect } from 'react';
 import { del, get, post, put } from '../utils/http';
 
@@ -46,7 +48,7 @@ const ProductoProvider = ({ children }) => {
   const eliminarProductoContext = async (id) => {
     try {
         const productoEliminado = await del(url, id);
-        console.log(productoEliminado);
+        // console.log(productoEliminado);
       let nuevaDB = productos.filter((producto) => producto.id !== id);
       setProductos(nuevaDB);
       setRecargarTabla((prev) => !prev);

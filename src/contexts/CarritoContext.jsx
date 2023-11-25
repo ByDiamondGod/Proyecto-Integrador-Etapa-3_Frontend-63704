@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { createContext } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
@@ -45,7 +46,7 @@ const CarritoProvider = ( { children } ) => {
         try {
             // petición asincronica a nuestro backend
             const resultado = await post(url, carrito)
-            console.log(resultado);
+            // console.log(resultado);
             // limpieza del localStorage y limpiar el estado
             limpiarCarrito()
         } catch (error) {
