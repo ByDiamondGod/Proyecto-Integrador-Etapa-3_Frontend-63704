@@ -32,7 +32,7 @@ const Card = ({ producto }) => {
       <div className="card">
         <article className="card__article">
           <div className="card__image-container">
-            <img className="card__image" src={producto.foto} alt={producto.nombre} />
+            <img className="card__image" src={producto.foto} alt={producto.nombre} loading='lazy' />
           </div>
           <div className="card__content">
             <h2 className="card__heading">{producto.nombre}</h2>

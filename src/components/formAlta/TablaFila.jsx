@@ -77,7 +77,7 @@ const TablaFila = ({ producto, setProductoAEditar, formSwipe }) => {
           <td>{producto.categoria}</td>
           <td className='alta-table__description' >{producto.detalles}</td>
           <td>
-            <img className='alta-table__img' src={producto.foto} alt={producto.nombre} />
+            <img className='alta-table__img' src={producto.foto} alt={producto.nombre} loading='lazy'/>
           </td>
           <td>{producto.envio ? 'Si' : 'No'}</td>
 
