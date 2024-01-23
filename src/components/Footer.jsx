@@ -1,8 +1,12 @@
 import './Footer.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+
+
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="main-footer">
     <div className="main-footer__container-top">
@@ -60,10 +64,10 @@ const Footer = () => {
 
     <div className="main-footer__container-bottom">
       <div className="main-footer__social">
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="main-footer__social-link" aria-label="Facebook">
-          <FontAwesomeIcon icon={faFacebook} size="xl" />
+        <a href="https://github.com/ByDiamondGod" target="_blank" rel="noopener noreferrer" className="main-footer__social-link" aria-label="Github">
+          <FontAwesomeIcon icon={faGithub} size="xl" />
         </a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="main-footer__social-link" aria-label="Instagram">
+        <a href="https://www.instagram.com/eduardodanderfer/" target="_blank" rel="noopener noreferrer" className="main-footer__social-link" aria-label="Instagram">
           <FontAwesomeIcon icon={faInstagram} size="xl" />
         </a>
         <a href="https://wa.me/541125473411" target="_blank" rel="noopener noreferrer" className="main-footer__social-link" aria-label="WhatsApp">
@@ -72,10 +76,8 @@ const Footer = () => {
       </div>
     </div>
       <div className="main-footer__info">
-        <p className="main-footer__info-text">© 2023 ∾ Eddev</p>
+        <p className="main-footer__info-text">© {currentYear} ∾ Eddev</p>
       </div>
-
-
   </footer>
   )
 }
