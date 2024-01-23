@@ -23,7 +23,7 @@ const Nosotros = () => {
                 </section>
 
                 <div className="main-nosotros__about-us">
-                    <div className="img-1"><img src="/img/girl-grid-1.webp" alt="girl-space"/> </div>
+                    <div className="img-1"><img src="/img/girl-grid-1.webp" alt="girl-space" loading='lazy'/> </div>
                     <div className="text-1">
                         <h2>Nuestra vision</h2>
                         <p>En Galaxy Shop estamos para ofrecerte una experiencia única. Nuestra pasión por los misterios de
@@ -31,7 +31,7 @@ const Nosotros = () => {
                             pedacito del universo. Únete a nosotros en este viaje estelar y descubre un nuevo nivel de
                             conexión con el espacio</p>
                     </div>
-                    <div className="img-2"> <img src="/img/girl-grid-2.webp" alt="girl-space-2"/></div>
+                    <div className="img-2"> <img src="/img/girl-grid-2.webp" alt="girl-space-2" loading='lazy'/></div>
                     <div className="text-2">
                         <h2>¿Quienes somos?</h2>
                         <p>Somos viajeros del espacio, con el objetivo de brindarte la oportunidad de experimentar la
